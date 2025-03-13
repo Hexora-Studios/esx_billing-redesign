@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HexoraStudio.com | ESX Billing Redesign</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="body" class="hidden">
+    <div id="bills-container">
+        <div class="header">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 10V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2H4"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <path d="M10.42 12.61a2.1 2.1 0 1 1 2.97 2.97L7.95 21 4 22l.99-3.95 5.43-5.44Z"></path>
+                </svg>
+            </div>
+            <div class="title-section">
+                <h1>Financial Center</h1>
+                <span class="subtitle">Outstanding Payments</span>
+            </div>
+            <div class="close-btn" onclick="closeUI()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="bills-content">
+            <div class="bills-header">
+                <div class="bill-detail">Description</div>
+                <div class="bill-amount">Amount</div>
+                <div class="bill-action">Action</div>
+            </div>
+            <div class="bills-wrapper">
+                <ul id="bills-list"></ul>
+                <div id="empty-state" class="hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                    <p>No pending invoices</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-info">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" x2="12" y1="8" y2="12"></line>
+                    <line x1="12" x2="12.01" y1="16" y2="16"></line>
+                </svg>
+                <span>Press ESC to close</span>
+            </div>
+            <div class="total-section">
+                <span id="total-count">0</span> pending invoices
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
