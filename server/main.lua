@@ -139,8 +139,10 @@ ESX.RegisterServerCallback('esx_billing:payBill', function(source, cb, billId)
 		if xPlayer.getMoney() < amount then
 			paymentAccount = 'bank'
 			if xPlayer.getAccount('bank').money < amount then
-				xTarget.showNotification(TranslateCap('target_no_money'))
-				xPlayer.showNotification(TranslateCap('no_money'))
+                if xTarget then
+                    xTarget.showNotification(TranslateCap('target_no_money'))
+                end
+                xPlayer.showNotification(TranslateCap('no_money'))
 				return cb()
 			end
 		end
@@ -180,7 +182,9 @@ ESX.RegisterServerCallback('esx_billing:payBill', function(source, cb, billId)
 		if xPlayer.getMoney() < amount then
 			paymentAccount = 'bank'
 			if xPlayer.getAccount('bank').money < amount then
-				xTarget.showNotification(TranslateCap('target_no_money'))
+                if xTarget then
+                    xTarget.showNotification(TranslateCap('target_no_money'))
+                end				
 				xPlayer.showNotification(TranslateCap('no_money'))
 				return cb()
 			end
