@@ -1,3 +1,4 @@
+#⚠ More free scripts soon at: [Discord](https://discord.gg/sVXjraaENb) (Please join to help us grow) ⚠
 # esx_billing redesign
  billing system for esx-framework (Redesign by Hexora Studio)
 
