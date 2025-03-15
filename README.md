@@ -2,11 +2,11 @@
 **esx_billing redesign**
  billing system for esx-framework (Redesign by Hexora Studio)
 **Main Features**
-> Default ESX Billing system with extended functionalities
-> Enhanced UI for a more intuitive and user-friendly experience
-> LOG system for general and job-specific billing
-> **Just upload the script and it will work without having to make any changes.**
-> Exclusive support on Discord
+> Default ESX Billing system with extended functionalities |
+> Enhanced UI for a more intuitive and user-friendly experience |
+> LOG system for general and job-specific billing |
+> **Just upload the script and it will work without having to make any changes.** |
+> Exclusive support on Discord |
 **Dependencies**
 > ESX
 
