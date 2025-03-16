@@ -3,7 +3,7 @@ game 'gta5'
 lua54 'yes'
 
 description 'Allows Players to recieve and Send Bills'
-version '1.0'
+version '1.1.0' -- (esx billing v1)
 
 shared_scripts {
 	'@es_extended/imports.lua',

@@ -1,4 +1,8 @@
 local function sendDiscordLog(webhookUrl, title, description, color, jobName)
+    if not Config.EnableDiscordLogs then
+        return
+    end
+
     local embed = {
         {
             ["title"] = title,
