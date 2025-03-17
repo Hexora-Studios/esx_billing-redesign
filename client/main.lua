@@ -3,6 +3,11 @@ local isUIVisible = false
 
 local function showBillsMenu()
     ESX.TriggerServerCallback('esx_billing:getBills', function(bills)
+        -- if #bills <= 0 then
+        --     ESX.ShowNotification(TranslateCap('no_invoices'))
+        --     return
+        -- end
+            
         SendNUIMessage({
             type = 'SHOW_BILLS',
             bills = bills
@@ -19,7 +24,7 @@ RegisterCommand('showbills', function()
     end
 end, false)
 
--- RegisterKeyMapping('showbills', TranslateCap('keymap_showbills'), 'keyboard', 'F7')
+RegisterKeyMapping('showbills', TranslateCap('keymap_showbills'), 'keyboard', 'F7')
 
 AddEventHandler('esx:onPlayerDeath', function() isDead = true end)
 AddEventHandler('esx:onPlayerSpawn', function() isDead = false end)
@@ -41,21 +46,6 @@ RegisterNUICallback('payBill', function(data, cb)
 end)
 
 RegisterNUICallback('getBills', function(data, cb)
-    ESX.TriggerServerCallback('esx_billing:getBills', function(bills)
-        cb({ bills = bills })
-    end)
-end)
-
-RegisterNUICallback('getNearby', function(data, cb)
-    local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
-
-    if closestPlayer == -1 or closestDistance > 3.0 then
-        ESX.ShowNotification('There\'s no players nearby!')
-    end
-        cb({ targetId = GetPlayerServerId(closestPlayer) })
-end)
-
-RegisterNUICallback('sendBill', function(data, cb)
     ESX.TriggerServerCallback('esx_billing:getBills', function(bills)
         cb({ bills = bills })
     end)
