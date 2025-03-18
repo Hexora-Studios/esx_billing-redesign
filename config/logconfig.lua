@@ -1,10 +1,8 @@
-Config = {}
-Config.Locale = GetConvar('esx:locale', 'en')
+LogConfig = {}
 
+LogConfig.EnableDiscordLogs = false -- true / false
 
-Config.EnableDiscordLogs = false -- true / false
-
-Config.Webhooks = {
+LogConfig.Webhooks = {
     General = "DISCORD_WEBHOOK",
     Jobs = {
         police = "DISCORD_WEBHOOK",

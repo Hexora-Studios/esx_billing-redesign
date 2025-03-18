@@ -1,5 +1,5 @@
 local function sendDiscordLog(webhookUrl, title, description, color, jobName)
-    if not Config.EnableDiscordLogs then
+    if not LogConfig.EnableDiscordLogs then
         return
     end
 
@@ -46,7 +46,7 @@ local function billPlayerByIdentifier(targetIdentifier, senderIdentifier, shared
             xTarget.showNotification(TranslateCap('received_invoice'))
 
             local jobName = string.gsub(sharedAccountName, 'society_', '')
-            local webhookUrl = Config.Webhooks.Jobs[jobName] or Config.Webhooks.General
+            local webhookUrl = LogConfig.Webhooks.Jobs[jobName] or LogConfig.Webhooks.General
             local xSender = ESX.GetPlayerFromIdentifier(senderIdentifier)
             local senderName = xSender and xSender.getName() or "Unknown"
             local targetName = xTarget and xTarget.getName() or "Unknown"
@@ -70,7 +70,7 @@ local function billPlayerByIdentifier(targetIdentifier, senderIdentifier, shared
 
     xTarget.showNotification(TranslateCap('received_invoice'))
 
-    local webhookUrl = Config.Webhooks.General
+    local webhookUrl = LogConfig.Webhooks.General
     local xSender = ESX.GetPlayerFromIdentifier(senderIdentifier)
     local senderName = xSender and xSender.getName() or "Unknown"
     local targetName = xTarget and xTarget.getName() or "Unknown"
@@ -163,7 +163,7 @@ ESX.RegisterServerCallback('esx_billing:payBill', function(source, cb, billId)
             xTarget.showNotification(TranslateCap('received_payment', groupedDigits))
         end
 
-        local webhookUrl = Config.Webhooks.General
+        local webhookUrl = LogConfig.Webhooks.General
         local senderName = xPlayer.getName()
         local targetName = xTarget and xTarget.getName() or "Unknown"
         local description = string.format(
@@ -206,7 +206,7 @@ ESX.RegisterServerCallback('esx_billing:payBill', function(source, cb, billId)
         end
 
         local jobName = string.gsub(result.target, 'society_', '')
-        local webhookUrl = Config.Webhooks.Jobs[jobName] or Config.Webhooks.General
+        local webhookUrl = LogConfig.Webhooks.Jobs[jobName] or LogConfig.Webhooks.General
         local senderName = xPlayer.getName()
         local targetName = xTarget and xTarget.getName() or "Unknown"
         local description = string.format(
